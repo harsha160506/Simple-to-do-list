@@ -1,0 +1,73 @@
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>To-Do List</title>
+<link rel="icon" href="icon.jpg">
+<style>
+    h1{
+        margin-top:20px;
+    }
+    #one{
+        width:320px;
+        padding:10px;
+        border-width:1px;
+        border-color:grey;
+        border-style:solid;
+
+    }
+    button{
+        padding:10px;
+        background-color:blue;
+        color:white;
+        cursor:pointer;
+        transition:0.2s;
+    }
+    button:hover{
+        color:darkblue;
+    }
+    #two{
+        margin-top:15px;
+        width:290px;
+        padding:0;
+    }
+    li{
+        background-color: white;
+        color:black;
+        margin:10px;
+        padding:12px;
+        display:flex;
+        justify-content: space-between;
+        align-items:center;
+    }
+    li button{
+        background-color:red;
+        color:white;
+        padding:10px;
+    }
+    li button:hover{
+        color:darkred;
+    }
+</style>
+
+
+</head>
+<body bgcolor="grey" style="color:black">
+    <center>
+    <h1>To-Do List📝</h1>
+    <input id="one" placeholder="Enter Your Task">
+    <button onclick="add()">+</button>
+    
+    <ul id="two"></ul>
+    </center>
+    <script>
+        var a=document.getElementById("one")
+        var b=document.getElementById("two")
+        function add(){
+            var c=document.createElement("li")
+            c.innerHTML=a.value + "<button onclick=deleteItem(event)>Delete</button"
+            b.append(c)
+        }
+        function deleteItem(event){
+            event.target.parentElement.remove()
+        }
+    </script>
+</body>
